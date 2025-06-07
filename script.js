@@ -1,56 +1,74 @@
 window.addEventListener("load", () => {
+
   const loader = document.getElementById("loader");
   loader.classList.add("fade");
+
+
+  const intro = document.querySelector('header h1');
+  const text = intro.dataset.fulltext || intro.textContent;
+  intro.textContent = '';
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      intro.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+  typeWriter();
+
+
+  revealOnScroll();
 });
 
-const intro = document.querySelector('header h1');
-const text = intro.textContent;
-intro.textContent = '';
 
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    intro.textContent += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100);
-  }
-}
-window.onload = typeWriter;
 
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
+document.getElementById("theme-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
+
+
 
 const showreelBtn = document.getElementById("showreel-btn");
 const gallery = document.getElementById("gallery");
 
 const images = [
-  "image1.png",
-  "image2.png",
-  "image3.png",
-  "image4.png",
-  "image5.png",
-  "image6.png"
+  "images/image1.png",
+  "images/image2.png",
+  "images/image3.png",
+  "images/image4.png",
+  "images/image5.png",
+  "images/image6.png"
 ];
 
 showreelBtn.addEventListener("click", () => {
-  gallery.innerHTML = "";
+  if (gallery.children.length > 0) return; 
+
   gallery.style.opacity = 1;
+
   images.forEach((src, i) => {
-    setTimeout(() => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.style.opacity = 0;
-      img.style.transform = "translateY(20px)";
-      gallery.appendChild(img);
+    const img = new Image();
+    img.src = src;
+    img.alt = `Showreel ${i + 1}`;
+    img.style.opacity = 0;
+    img.style.transform = "translateY(20px)";
+    img.classList.add("fade-img");
+
+    img.onload = () => {
       requestAnimationFrame(() => {
         img.style.opacity = 1;
         img.style.transform = "translateY(0)";
       });
-    }, i * 200); 
+    };
+
+    setTimeout(() => {
+      gallery.appendChild(img);
+    }, i * 200);
   });
 });
+
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     e.preventDefault();
@@ -59,6 +77,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+
+
 const sections = document.querySelectorAll('section');
 
 function revealOnScroll() {
@@ -72,4 +93,3 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
