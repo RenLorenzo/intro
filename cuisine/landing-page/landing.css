@@ -6,62 +6,8 @@ html, body {
   color: #111;
   scroll-behavior: smooth;
 }
-.search-bar h2{
-    margin-right: 10px;
-}
-
-.slider-container {
-  overflow: hidden;
-  width: 100vw;
-  padding: 40px 0;
-  background: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.slider {
-  display: flex;
-  gap: 40px;
-  animation: scroll 20s linear infinite;
-}
-
-.dish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.dish img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.dish p {
-    font-family:Cabin;
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-}
-
-.dish img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.search-bar h2{
-    margin: 10px;
+.search-bar h2 {
+  margin: 10px;
 }
 .search-bar {
   width: 90%;
@@ -72,9 +18,7 @@ html, body {
   align-items: center;
   background: #f2f2f2;
   border-radius: 40px;
- 
 }
-
 .search-bar input {
   border: none;
   outline: none;
@@ -84,7 +28,6 @@ html, body {
   font-family: Cabin;
   color: #333;
 }
-
 .search-icon {
   width: 30px;
   height: 20px;
@@ -92,46 +35,112 @@ html, body {
   margin-right: 12px;
   opacity: 0.6;
 }
-.food-order{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 0;
+.slider-container {
+  overflow: hidden;
+  width: 100vw;
+  padding: 40px 0;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.slider {
+  display: flex;
+  gap: 40px;
+  animation: scroll 20s linear infinite;
+}
+.dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.dish img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.dish p {
+  font-family: Cabin;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+.dish img:hover {
+  transform: scale(1.05);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.food-order {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  padding: 0 10px;
 }
 .dish-pic img {
+  display: block;
   width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 20px;
-  margin-bottom: 0;
-  
 }
+
 .dishname {
   font-family: 'Cabin', sans-serif;
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 0;
-  
 }
 .dish-pic:hover {
   transform: scale(1.01);
-  transition: transform 0.3s ease;
 }
-
-.rating img{
-    width: 15px;
-    height: 15px;
+.rating img {
+  width: 15px;
+  height: 15px;
 }
 .rating {
   display: flex;
   align-items: center;
-  gap: 6px; 
+  gap: 6px;
 }
-
 .rating p {
   margin: 0;
   font-family: 'Cabin', sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: #636363;
+}
+@media (max-width: 599px) {
+  .food-order {
+    gap: 15px;
+  }
+  .dish-pic img {
+    max-width: 100%;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .food-order {
+    gap: 20px;
+  }
+  .dish-pic img {
+    max-width: 200px;
+  }
+}
+@media (min-width: 900px) {
+  .food-order {
+    gap: 30px;
+  }
+  .dish-pic img {
+    max-width: 250px;
+  }
 }
