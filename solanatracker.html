@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solana Coin Tracker</title>
+  <link rel="stylesheet" href="s3.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Solana Coin Tracker</h1>
+
+    <select id="coinSelect">
+      <option>Loading coins...</option>
+    </select>
+    <button id="trackBtn">Track Coin</button>
+
+    <div id="coinData" class="coin-data"></div>
+
+    <canvas id="priceChart" width="600" height="300"></canvas>
+
+    <h2>Leaderboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th><th>Name</th><th>Price</th><th>Market Cap</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+  </div>
+
+  <script src="script3.js"></script>
+</body>
+</html>

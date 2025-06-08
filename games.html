@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Favorite Games</title>
+  <title>Ren | Game Showcase</title>
   <link rel="stylesheet" href="s2.css" />
 </head>
 <body>
 
-  <h1>10/10 shi ngl</h1>
+  <h1>My Favorite Games</h1>
 
-  <div class="game-list">
-    <a href="https://store.steampowered.com/app/1049410/Superliminal/" target="_blank" rel="noopener" class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1049410/header.jpg" alt="Superliminal" />
-      <span>Superliminal</span>
-    </a>
+  <!-- Floating game launcher bar -->
+  <nav class="game-floating-bar" aria-label="Game launcher">
+    <button class="game-icon" data-game="superliminal" aria-label="Open Superliminal details">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1049410/capsule_184x69.jpg" alt="Superliminal" />
+    </button>
+    <button class="game-icon" data-game="battlefield4" aria-label="Open Battlefield 4 details">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/capsule_184x69.jpg" alt="Battlefield 4" />
+    </button>
+  </nav>
 
-    <a href="https://store.steampowered.com/app/1238840/Battlefield_4/" target="_blank" rel="noopener" class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/header.jpg" alt="Battlefield 4" />
-      <span>Battlefield 4</span>
-    </a>
+  <!-- Modal -->
+  <div class="modal" id="game-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" tabindex="-1" hidden>
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <div class="modal-gallery"></div>
+      <a id="modal-link" href="#" target="_blank" rel="noopener" class="modal-link">View on Steam</a>
+    </div>
   </div>
 
 <script src="script2.js"></script>
+
 </body>
 </html>
