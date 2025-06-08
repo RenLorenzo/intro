@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,12 +13,16 @@
 
   <!-- Floating game launcher bar -->
   <nav class="game-floating-bar" aria-label="Game launcher">
-    <button class="game-icon" data-game="superliminal" aria-label="Open Superliminal details">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1049410/capsule_184x69.jpg" alt="Superliminal" />
-    </button>
-    <button class="game-icon" data-game="battlefield4" aria-label="Open Battlefield 4 details">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/capsule_184x69.jpg" alt="Battlefield 4" />
-    </button>
+    <div class="game-card">
+      <button class="game-icon" data-game="superliminal" aria-label="Open Superliminal details">
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1049410/capsule_184x69.jpg" alt="Superliminal" />
+      </button>
+    </div>
+    <div class="game-card">
+      <button class="game-icon" data-game="battlefield4" aria-label="Open Battlefield 4 details">
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1238840/capsule_184x69.jpg" alt="Battlefield 4" />
+      </button>
+    </div>
   </nav>
 
   <!-- Modal -->
@@ -32,7 +36,6 @@
     </div>
   </div>
 
-<script src="script2.js"></script>
-
+  <script src="script2.js"></script>
 </body>
 </html>
