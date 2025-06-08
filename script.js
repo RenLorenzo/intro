@@ -1,8 +1,6 @@
 window.addEventListener("load", () => {
-
   const loader = document.getElementById("loader");
   loader.classList.add("fade");
-
 
   const intro = document.querySelector('header h1');
   const text = intro.dataset.fulltext || intro.textContent;
@@ -17,34 +15,32 @@ window.addEventListener("load", () => {
   }
   typeWriter();
 
-
   revealOnScroll();
 });
-
-
 
 document.getElementById("theme-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-
-
 const showreelBtn = document.getElementById("showreel-btn");
 const gallery = document.getElementById("gallery");
 
 const images = [
-  "images/image1.png",
-  "images/image2.png",
-  "images/image3.png",
-  "images/image4.png",
-  "images/image5.png",
-  "images/image6.png"
+  "image/image1.png",
+  "image/image2.png",
+  "image/image3.png",
+  "image/image4.png",
+  "image/image5.png",
+  "image/image6.png"
 ];
 
 showreelBtn.addEventListener("click", () => {
-  if (gallery.children.length > 0) return; 
+  if (gallery.children.length > 0) return; // prevent reload
 
   gallery.style.opacity = 1;
+
+  const loadedImages = [];
+  let loadedCount = 0;
 
   images.forEach((src, i) => {
     const img = new Image();
@@ -55,19 +51,22 @@ showreelBtn.addEventListener("click", () => {
     img.classList.add("fade-img");
 
     img.onload = () => {
-      requestAnimationFrame(() => {
-        img.style.opacity = 1;
-        img.style.transform = "translateY(0)";
-      });
+      loadedCount++;
+      loadedImages[i] = img;
+      if (loadedCount === images.length) {
+        loadedImages.forEach((image, index) => {
+          gallery.appendChild(image);
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              image.style.opacity = 1;
+              image.style.transform = "translateY(0)";
+            });
+          }, index * 150);
+        });
+      }
     };
-
-    setTimeout(() => {
-      gallery.appendChild(img);
-    }, i * 200);
   });
 });
-
-
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
@@ -77,8 +76,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
-
-
 
 const sections = document.querySelectorAll('section');
 
