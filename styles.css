@@ -183,3 +183,7 @@ button:hover {
 body.dark .floating-socials img {
   filter: invert(100%);
 }
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
