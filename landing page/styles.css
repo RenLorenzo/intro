@@ -1,0 +1,121 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(10, 10, 10);
+  background-image: url('images/Untitled-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: aliceblue;
+  scroll-behavior: smooth;
+}
+
+
+#toolbar {
+  font-family: 'Cabin', sans-serif;
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  
+  user-select: none;
+}
+
+#left, #right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#left h2, #right h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #eee;
+}
+#left h2:hover, #right h2:hover {
+  color: rgba(255, 255, 255, 0.774);
+}
+
+
+#heading {
+  margin: 120px auto 60px;
+  max-width: 900px;
+  text-align: center;
+}
+
+#heading h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+
+.gradiant {
+  background: linear-gradient(90deg, #ffee00, #e5ff00, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}
+
+#image-slider {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 80px;
+  cursor: pointer;
+  user-select: none;
+  justify-content: center;
+}
+
+#image-slider img {
+  width: 320px;
+  height: 180px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#image-slider img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+#footer {
+  background-color: rgba(20, 20, 20, 0.9);
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-family: 'Cabin', sans-serif;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.footer-content a {
+  color: #ff385c;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  margin-top: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #ff8a00;
+}
