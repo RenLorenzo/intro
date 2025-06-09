@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice</title>
+  <link rel="stylesheet" href="invoice.css" />
+</head>
+<body>
+  <div class="invoice-container">
+    <h1>Invoice</h1>
+    <p><strong>Item:</strong> <span id="item"></span></p>
+    <p><strong>Quantity:</strong> <span id="quantity"></span></p>
+    <p><strong>Special Instructions:</strong> <span id="instructions"></span></p>
+    <p class="thank-you">Thank you for your order!</p>
+    <button onclick="window.print()">Print Invoice</button>
+  </div>
+
+  <script>
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+    if (!orderData) {
+      document.body.innerHTML = '<p>No order data found.</p>';
+    } else {
+      document.getElementById('item').innerText = orderData.pizzaName;
+      document.getElementById('quantity').innerText = orderData.quantity;
+      document.getElementById('instructions').innerText = orderData.instructions;
+    }
+  </script>
+</body>
+</html>

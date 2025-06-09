@@ -1,0 +1,11 @@
+
+.searchBox input {
+  background-color: black;
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+}
+

@@ -1,0 +1,47 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
+  margin: 40px;
+}
+
+.invoice-container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.thank-you {
+  margin-top: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 30px;
+  font-size: 16px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #d62828;
+}
